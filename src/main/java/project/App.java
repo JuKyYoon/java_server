@@ -1,5 +1,7 @@
 package project;
 import com.sun.net.httpserver.*;
+
+import project.api.ApiHandler;
 import project.api.CheckHandler;
 import project.api.LoginHandler;
 import project.api.SumHandler;
@@ -19,6 +21,7 @@ public class App {
         app.createContext("/", new CheckHandler());
         app.createContext("/sum", new SumHandler());
         app.createContext("/auth", new LoginHandler());
+        app.createContext("/api", new ApiHandler());
 
         app.setExecutor(null);
         // 시작
